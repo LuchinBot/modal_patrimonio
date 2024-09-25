@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguimiento de Trámite</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Modal -->
+    <div class="modal fade show" id="timelineModal" tabindex="-1" aria-labelledby="timelineModalLabel" aria-hidden="true" style="display: block;">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="timelineModalLabel">Seguimiento de Trámite 005-2024007331</h5>
+                    <button type="button" class="btn-close" aria-label="Close" onclick="redirigirAlInicio()"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Información de la persona -->
+                    <div class="persona-info mb-4">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <img src="Perfil.jpg" alt="Foto de Luis Carlos" class="img-fluid rounded-circle">
+                            </div>
+                            <div class="col-md-9">
+                                <h4>Información del Usuario</h4>
+                                <p><strong>Nombre Completo:</strong> Luis Carlos</p>
+                                <p><strong>DNI:</strong> 4600000</p>
+                                <p><strong>Centro de Costo:</strong> ATI</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bienes de la persona -->
+                    <div class="bienes-info">
+                        <h4>Bienes Asignados</h4>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre del Bien</th>
+                                        <th>Marca</th>
+                                        <th>Modelo</th>
+                                        <th>Serie</th>
+                                        <th>Código Patrimonial</th>
+                                        <th>Estado</th>
+                                        <th>Foto</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td> <!-- Nombre del bien -->
+                                        <td></td> <!-- Marca -->
+                                        <td></td> <!-- Modelo -->
+                                        <td></td> <!-- Serie -->
+                                        <td></td> <!-- Código patrimonial -->
+                                        <td></td> <!-- Estado -->
+                                        <td><img src="URL" alt="Foto del bien" class="img-fluid"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="redirigirAlInicio()">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+
+    <!-- Script Modal automáticamente -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var myModal = new bootstrap.Modal(document.getElementById('timelineModal'), {
+                keyboard: false
+            });
+            myModal.show();
+        });
+
+        function redirigirAlInicio() {
+            window.location.href = "index.html";  // Redirige al index principal
+        }
+    </script>
+</body>
+</html>
