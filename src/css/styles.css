@@ -5,7 +5,6 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Roboto", sans-serif;
-    background-image: url('Fondo.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -16,6 +15,32 @@ body {
 
 }
 
+.modal-header {
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+}
+
+.form-control.search {
+    font-weight: 200 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    border-bottom: 1px solid rgba(0, 22, 74, 0.442) !important;
+}
+
+.form-control:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border-bottom: 1px solid rgb(0, 22, 74) !important;
+}
+button:focus{
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.text-azul {
+    color: rgb(0, 22, 74);
+}
+
 .main-container {
     width: 100%;
     margin: auto;
@@ -24,7 +49,7 @@ body {
     justify-content: center;
 }
 
-.container {
+.container-wrapp {
     width: 500px;
     height: 500px;
     position: relative;
@@ -62,8 +87,8 @@ body {
 .form-container .information {
     position: relative;
     padding: 2px 10px;
-    background: rgb(0,22,74);
-    background: linear-gradient(125deg, rgba(0,22,74,1) 0%, rgba(27,47,96,1) 76%);
+    background: rgb(0, 22, 74);
+    background: linear-gradient(125deg, rgba(0, 22, 74, 1) 0%, rgba(27, 47, 96, 1) 76%);
     font-size: 13px;
     text-align: justify;
     display: flex;
@@ -90,6 +115,7 @@ body {
 }
 
 .form-container .information p {
+    margin-top: 20px;
     font-style: normal;
     color: #fff;
 }
@@ -125,8 +151,9 @@ body {
 }
 
 .form input:focus {
+    box-shadow: none !important;
     outline: none !important;
-    border: 1px solid #39B44A;
+    border: 1px solid #39B44A !important;
 }
 
 .form .search {
@@ -136,7 +163,8 @@ body {
 
 .form .search button {
     width: 100%;
-    font-size: 15px;
+    height: 100%;
+    font-size: 18px;
     border: 1px solid #39B44A;
     background-color: #39B44A;
     color: #fff;
@@ -161,7 +189,7 @@ body {
 
 .base-img2 {
     position: absolute;
-    bottom: 134px;
+    bottom: 137px;
     right: 20px;
     margin-top: -40px;
     animation: img 10s infinite;
@@ -171,6 +199,107 @@ body {
     width: 111px;
 }
 
+/* Modal */
+.base-title {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.base-profile {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    background-color: #fff;
+    border: 2px solid #39B44A;
+    overflow: hidden;
+}
+
+.base-profile img {
+    width: 100%;
+}
+
+.list-bienes {
+    margin: 0;
+    padding: 0;
+    list-style: none !important;
+}
+
+.list-bienes .nav-item {
+    padding: 10px 10px;
+    border-bottom: 1px solid #424242;
+    font-weight: 200;
+}
+
+.active {
+    background-color: rgba(0, 22, 74, 0.793);
+    color: #fff !important;
+    font-weight: 400 !important;
+}
+
+.list-bienes .nav-item p {
+    margin: 0 !important;
+    line-height: 1.1;
+    font-size: 16px !important;
+}
+
+.list-bienes .nav-item .subtitle-bien {
+    font-size: 16px;
+    font-weight: 200;
+}
+
+.detail-bien {
+    font-size: 16px !important;
+    background-color: #e5e0e0;
+    border: 1px solid gray;
+}
+
+.detail label {
+    font-weight: 600;
+    margin-bottom: 0px;
+}
+
+.detail p {
+    margin: 0;
+    font-weight: 300;
+}
+
+.photos-bien {
+    background-color: #e2e1e1;
+    border: 1px solid gray;
+}
+
+.photos-bien .photo-top {
+    height: 300px;
+    width: 100%;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.photos-bien .photo-top img {
+    height: 100%;
+}
+
+.photos-bien .photo-bottom {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    background-color: #e5e0e0;
+    overflow-x: scroll;
+}
+
+.photo-bottom img {
+    border: 1px solid gray;
+    width: 100px;
+    background: #fff;
+}
+.modal-xl{
+    max-width:1540px !important;
+}
+
+/* Keyframes */
 
 @keyframes img {
     0% {
