@@ -96,15 +96,16 @@
           </div>
           <div class="modal-body">
             <!--Search and List-->
-            <div class="row p-2">
+            <div class="row p-2 section-bienes">
               <div class="col-md-6 border-end">
                 <input
                   type="text"
-                  class="form-control search"
+                  class="form-control search mb-2"
                   placeholder="Buscar por caracteristica del bien..."
+                  id="search"
                 />
                 <ul class="list-bienes py-3">
-                  <li class="nav-item active">
+                  <!--<li class="nav-item" id="">
                     <p>
                       Unidad de Alimentación Ininterrumpida [ 462200500066]
                       <br />
@@ -113,17 +114,7 @@
                         462200500066</span
                       >
                     </p>
-                  </li>
-                  <li class="nav-item">
-                    <p>
-                      Unidad de Alimentación Ininterrumpida [ 462200500066]
-                      <br />
-                      <span class="subtitle-bien">
-                        Marca: PANASONIC | Modelo: SPE | serie:
-                        462200500066</span
-                      >
-                    </p>
-                  </li>
+                  </li>-->
                 </ul>
               </div>
               <div class="col-md-6 p-0">
@@ -132,23 +123,23 @@
                     <div class="col-md-6" style="border-right: 1px solid gray;">
                       <div class="mb-1">
                         <label>Centro de Costo</label>
-                        <p>Área de Tecnologías de la Información</p>
+                        <p id="centroCosto">Área de Tecnologías de la Información</p>
                       </div>
                       <div class="mb-1">
                         <label>Ubicación Física</label>
-                        <p>Área de Tecnologías de la Información</p>
+                        <p id="ubicacionFisica">Área de Tecnologías de la Información</p>
                       </div>
                       <div class="mb-1">
                         <label>Tipo Patrimonial</label>
-                        <p>Área de Tecnologías de la Información</p>
+                        <p id="tipoPatrimonial">Área de Tecnologías de la Información</p>
                       </div>
                       <div class="mb-1">
                         <label>Bien Patrimonial</label>
-                        <p>-------</p>
+                        <p id="bienPatrimonial">-------</p>
                       </div>
                       <div class="mb-1">
                         <label>Observaciones</label>
-                        <p>--------</p>
+                        <p id="observaciones">--------</p>
                       </div>
                     </div>
                     <div class="col-md-6">
@@ -156,44 +147,44 @@
                         <div class="col-md-6">
                           <div class="mb-1">
                             <label>Marca</label>
-                            <p>--------</p>
+                            <p id="marca">--------</p>
                           </div>
                           <div class="mb-1">
                             <label>Serie</label>
-                            <p>--------</p>
+                            <p id="serie">--------</p>
                           </div>
                           <div class="mb-1">
                             <label>Grupo Bien</label>
-                            <p>--------</p>
+                            <p id="grupoBien">--------</p>
                           </div>
                           <div class="mb-1">
                             <label>Clase Bien</label>
-                            <p>-------</p>
+                            <p id="claseBien">-------</p>
                           </div>
                         </div>
                         <div class="col-md-6">
                           <div class="mb-1">
                             <label>Modelo</label>
-                            <p>--------</p>
+                            <p id="modelo">--------</p>
                           </div>
                           <div class="mb-1">
                             <label>Código Patrimonial</label>
-                            <p>--------</p>
+                            <p id="codigoPatrimonial">--------</p>
                           </div>
                           <div class="mb-1">
                             <label>Familia Bien</label>
-                            <p>--------</p>
+                            <p id="familiaBien">--------</p>
                           </div>
                           <div class="mb-1">
                             <label>Clase Bien</label>
-                            <p>-------</p>
+                            <p id="claseBien">-------</p>
                           </div>
                         </div>
                       </div>
                       <div>
                         <div class="mb-1">
                           <label>Descripción</label>
-                          <p>-------</p>
+                          <p id="descripcion">-------</p>
                         </div>
                       </div>
                     </div>
@@ -204,6 +195,8 @@
                     <img src="man1.png" alt="">
                   </div>
                   <div class="photo-bottom border">
+                    <!-- Fotos -->
+                    <img src="man1.png" alt="">
                     <img src="man1.png" alt="">
                   </div>
                 </div>
@@ -228,5 +221,10 @@
       integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
       crossorigin="anonymous"
     ></script>
+    <script
+  src="https://code.jquery.com/jquery-3.7.1.js"
+  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+  crossorigin="anonymous"></script>
+    <script src="src/js/modal.js"></script>
   </body>
 </html>

@@ -218,14 +218,28 @@ button:focus{
 .base-profile img {
     width: 100%;
 }
-
+.section-bienes{
+    height: 700px;
+    overflow: hidden;
+}
+.section-bienes .col-md-6:nth-child(1){
+    height: inherit;
+}
+.section-bienes .col-md-6:nth-child(2){
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
 .list-bienes {
+    height: inherit;
+    overflow-y: scroll;
     margin: 0;
     padding: 0;
     list-style: none !important;
 }
 
 .list-bienes .nav-item {
+    cursor: pointer;
     padding: 10px 10px;
     border-bottom: 1px solid #424242;
     font-weight: 200;
@@ -241,13 +255,13 @@ button:focus{
     margin: 0 !important;
     line-height: 1.1;
     font-size: 16px !important;
+    font-weight: 600 !important;
 }
 
 .list-bienes .nav-item .subtitle-bien {
     font-size: 16px;
     font-weight: 200;
 }
-
 .detail-bien {
     font-size: 16px !important;
     background-color: #e5e0e0;
@@ -274,6 +288,7 @@ button:focus{
     width: 100%;
     background-color: #fff;
     overflow: hidden;
+    text-align: center;
 }
 
 .photos-bien .photo-top img {
@@ -282,7 +297,7 @@ button:focus{
 
 .photos-bien .photo-bottom {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     width: 100%;
     height: 100px;
@@ -291,6 +306,7 @@ button:focus{
 }
 
 .photo-bottom img {
+    margin: 0px 10px;
     border: 1px solid gray;
     width: 100px;
     background: #fff;
