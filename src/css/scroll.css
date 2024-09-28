@@ -1,0 +1,60 @@
+/* Chrome, Edge and Safari */
+.photo-bottom::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+  }
+  .photo-bottom::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background-color: #DFE9EB;
+  }
+  
+  .photo-bottom::-webkit-scrollbar-track:hover {
+    background-color: #B8C0C2;
+  }
+  
+  .photo-bottom::-webkit-scrollbar-track:active {
+    background-color: #B8C0C2;
+  }
+  
+  .photo-bottom::-webkit-scrollbar-thumb {
+    border-radius: 9px;
+    background-color: #152C0D;
+  }
+  
+  .photo-bottom::-webkit-scrollbar-thumb:hover {
+    background-color: #62A34B;
+  }
+  
+  .photo-bottom::-webkit-scrollbar-thumb:active {
+    background-color: #62A34B;
+  }
+  /* Chrome, Edge and Safari */
+.list-bienes::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+  }
+  .list-bienes::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background-color: #DFE9EB;
+  }
+  
+  .list-bienes::-webkit-scrollbar-track:hover {
+    background-color: #b8c0c2a9;
+  }
+  
+  .list-bienes::-webkit-scrollbar-track:active {
+    background-color: #b8c0c2a9;
+  }
+  
+  .list-bienes::-webkit-scrollbar-thumb {
+    border-radius: 9px;
+    background-color: #707170;
+  }
+  
+  .list-bienes::-webkit-scrollbar-thumb:hover {
+    background-color: #5e5f5e;
+  }
+  
+  .list-bienes::-webkit-scrollbar-thumb:active {
+    background-color: #5e5f5e;
+  }

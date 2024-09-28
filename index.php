@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Consultas en Línea - Dirección Regional de Agricultura</title>
     <link rel="stylesheet" href="src/css/styles.css" />
+    <link rel="stylesheet" href="src/css/scroll.css" />
     <link rel="stylesheet" href="src/plugins/fontawesome/all.min.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -97,10 +98,10 @@
           <div class="modal-body">
             <!--Search and List-->
             <div class="row p-2 section-bienes">
-              <div class="col-md-6 border-end">
+              <div class="col-md-6">
                 <input
                   type="text"
-                  class="form-control search mb-2"
+                  class="form-control search mb-2 px-0"
                   placeholder="Buscar por caracteristica del bien..."
                   id="search"
                 />
@@ -123,23 +124,23 @@
                     <div class="col-md-6" style="border-right: 1px solid gray;">
                       <div class="mb-1">
                         <label>Centro de Costo</label>
-                        <p id="centroCosto">Área de Tecnologías de la Información</p>
+                        <p id="centroCosto"></p>
                       </div>
                       <div class="mb-1">
                         <label>Ubicación Física</label>
-                        <p id="ubicacionFisica">Área de Tecnologías de la Información</p>
+                        <p id="ubicacionFisica"></p>
                       </div>
                       <div class="mb-1">
                         <label>Tipo Patrimonial</label>
-                        <p id="tipoPatrimonial">Área de Tecnologías de la Información</p>
+                        <p id="tipoPatrimonio"></p>
                       </div>
                       <div class="mb-1">
                         <label>Bien Patrimonial</label>
-                        <p id="bienPatrimonial">-------</p>
+                        <p id="bienPatrimonial"></p>
                       </div>
                       <div class="mb-1">
                         <label>Observaciones</label>
-                        <p id="observaciones">--------</p>
+                        <p id="observaciones"></p>
                       </div>
                     </div>
                     <div class="col-md-6">
@@ -147,44 +148,44 @@
                         <div class="col-md-6">
                           <div class="mb-1">
                             <label>Marca</label>
-                            <p id="marca">--------</p>
+                            <p id="marca"></p>
                           </div>
                           <div class="mb-1">
                             <label>Serie</label>
-                            <p id="serie">--------</p>
+                            <p id="serie"></p>
                           </div>
                           <div class="mb-1">
                             <label>Grupo Bien</label>
-                            <p id="grupoBien">--------</p>
+                            <p id="grupoBien"></p>
                           </div>
                           <div class="mb-1">
                             <label>Clase Bien</label>
-                            <p id="claseBien">-------</p>
+                            <p id="claseBien"></p>
                           </div>
                         </div>
                         <div class="col-md-6">
                           <div class="mb-1">
                             <label>Modelo</label>
-                            <p id="modelo">--------</p>
+                            <p id="modelo"></p>
                           </div>
                           <div class="mb-1">
                             <label>Código Patrimonial</label>
-                            <p id="codigoPatrimonial">--------</p>
+                            <p id="codigoPatrimonial"></p>
                           </div>
                           <div class="mb-1">
                             <label>Familia Bien</label>
-                            <p id="familiaBien">--------</p>
+                            <p id="familiaBien"></p>
                           </div>
                           <div class="mb-1">
-                            <label>Clase Bien</label>
-                            <p id="claseBien">-------</p>
+                            <label>Medidas</label>
+                            <p id="medidasBien"></p>
                           </div>
                         </div>
                       </div>
                       <div>
                         <div class="mb-1">
                           <label>Descripción</label>
-                          <p id="descripcion">-------</p>
+                          <p id="caracteristicas">-------</p>
                         </div>
                       </div>
                     </div>
@@ -192,12 +193,10 @@
                 </div>
                 <div class="photos-bien">
                   <div class="photo-top">
-                    <img src="man1.png" alt="">
+                    <img src="" id="imgFijo" alt="">
                   </div>
                   <div class="photo-bottom border">
                     <!-- Fotos -->
-                    <img src="man1.png" alt="">
-                    <img src="man1.png" alt="">
                   </div>
                 </div>
               </div>
