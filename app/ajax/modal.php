@@ -17,7 +17,8 @@ if(isset($_POST['id'])){
         d.descripcion as dependencia_d,
         uf.descripcion as ubicacion_fisica_d
         ,tp.descripcion as tipo_patrimonio_d,
-        caracteristicas, observaciones
+        caracteristicas, observaciones,
+        medidas
         FROM asignaciones_bien AS b 
         LEFT JOIN marca_bien AS ma ON ma.codmarca_bien=b.codmarca_bien
         LEFT JOIN grupo_bien AS gb ON gb.codgrupo_bien = b.codgrupo_bien

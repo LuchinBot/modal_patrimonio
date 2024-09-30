@@ -23,19 +23,51 @@ $(document).ready(function () {
             $('#centroCosto').text(element.dependencia_d)
             $('#codigoPatrimonial').text(element.codigo_patrimonial)
             $('#marca').text(element.marca_d)
-            $('#modelo').text(element.modelo_ajustado)
-            $('#serie').text(element.numero_serie_bien)
+            if (
+              element.modelo_ajustado == '' ||
+              element.modelo_ajustado == null
+            ) {
+              $('#modelo').text('S/M')
+            } else {
+              $('#modelo').text(element.modelo_ajustado)
+            }
+            if (
+              element.numero_serie_bien == '' ||
+              element.numero_serie_bien == null
+            ) {
+              $('#serie').text('S/N')
+            } else {
+              $('#serie').text(element.numero_serie_bien)
+            }
             $('#grupoBien').text(element.grupo_bien_d)
             $('#claseBien').text(element.clase_bien_d)
             $('#familiaBien').text(element.familia_bien_d)
             $('#catalogoBien').text(element.catalogo_bien_d)
             $('#dependencia').text(element.dependencia_d)
             $('#ubicacionFisica').text(element.ubicacion_fisica_d)
-            $('#tipoPatrimonio').text(element.tipo_patrimonio_d)
-            $('#caracteristicas').text(element.caracteristicas)
-            $('#observaciones').text(element.observaciones)
+            $('#tipoPatrimonio')
+              .text(element.tipo_patrimonio_d)
+              .css('text-transform', 'uppercase')
+            if (element.observaciones == '' || element.observaciones == null) {
+              $('#observaciones').text('S/O')
+            } else {
+              $('#observaciones').text(element.observaciones)
+            }
+            if (
+              element.caracteristicas == '' ||
+              element.caracteristicas == null
+            ) {
+              $('#caracteristicas').text('S/C')
+            } else {
+              $('#caracteristicas').text(element.caracteristicas)
+            }
+
+            if (element.medidas == '' || element.medidas == null) {
+              $('#medidas').text('S/M')
+            } else {
+              $('#medidas').text(element.medidas)
+            }
           })
-          console.log(data)
 
           // Limpiar contenedor
           $('.photo-bottom').empty()
@@ -83,18 +115,35 @@ $(document).ready(function () {
       data: { id: value },
       success: function (data) {
         data = JSON.parse(data)
-        // Limpiar listado
+        var totalBienes = 0
+        var empleado = data[1][0].empleado
+        $('#empleado').text(empleado)
+
         $('.list-bienes').empty()
 
-        data.forEach((element) => {
+        data[0].forEach((element) => {
+          var modelo = element.modelo_ajustado
+          var serie = element.numero_serie_bien
+          if (serie == null || serie == '' || serie == 'null') {
+            serie = 'S/N'
+          }
+          if (modelo == null || modelo == '' || modelo == 'null') {
+            modelo = 'S/M'
+          }
+          // Cargar bienes
           $('.list-bienes').append(
             `<li class="nav-item" id="${element.codigo_patrimonial}">
                <p>${element.nombre_bien_ajustado}<br />
-               <span class="subtitle-bien">${element.marca_d} | ${element.modelo_ajustado} | ${element.numero_serie_bien}</span></p>
+               <span class="subtitle-bien"><strong>MARCA:</strong> <em> ${element.marca_d}</em> | <strong>MODELO:</strong> <em>${modelo}</em> | <strong>SERIE:</strong> <em>${serie}</em>
+               | <strong>CÓDIGO:</strong> <em>${element.codigo_patrimonial}</em>
+               </span></p>
              </li>`
           )
+          totalBienes = totalBienes + 1
         })
 
+        // Total de bienes
+        $('#totalBienes').text(totalBienes)
         // Item activo
         const firstItem = $('.list-bienes li:first')
         firstItem.addClass('active')

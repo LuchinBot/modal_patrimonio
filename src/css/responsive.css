@@ -1,0 +1,32 @@
+/*Responsive*/
+
+@media screen and (max-width: 768px) {
+
+    .base-img1,
+    .base-img2 {
+        display: none;
+    }
+
+    .form-container {
+        left: 0px !important;
+    }
+
+    .modal {
+        width: 100% !important;
+    }
+
+    .base-profile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .list-bienes{
+        height: 100px;
+    }
+    .list-bienes .nav-item p{
+        font-size: 13px !important;
+    }
+    .detail-info{
+        margin-top: 30px;
+    }
+}
