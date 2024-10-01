@@ -2,12 +2,14 @@ $(document).ready(function () {
   $('#searchBtn').click(function () {
     const value = $('#dni').val()
 
-    // Si está vaciito uwu
-    if (!value) return
+    // Si está vacio no abrir el modal
+    if (value == '') {
+      return
+    }
 
     // Cargar bienes
     function cargarBienesDetalle(code) {
-      const url = 'app/ajax/modal.php?'
+      const url = 'app/ajax/modal.php'
 
       $.ajax({
         url: url,
@@ -115,55 +117,74 @@ $(document).ready(function () {
       data: { id: value },
       success: function (data) {
         data = JSON.parse(data)
-        var totalBienes = 0
-        var empleado = data[1][0].empleado
-        $('#empleado').text(empleado)
+        // ver que data[0] no sea nullo
+        if (data[1].length == 0) {
+          Swal.fire({
+            title: '¡No encontrado!',
+            text: 'El DNI no cuenta con bienes registrados',
+            icon: 'warning',
+            confirmButtonText: 'Entendido'
+          })
+          return
+        } else {
+          $('#detailModal').addClass('show').css('display', 'block')
 
-        $('.list-bienes').empty()
+          var totalBienes = 0
+          var empleado = data[1][0].empleado
+          var foto = data[1][0].foto
+          $('#empleado').text(empleado)
+          $('#foto').attr(
+            'src',
+            'http://10.31.1.7/drasuite/app/img/persona_natural/' + foto
+          )
 
-        data[0].forEach((element) => {
-          var modelo = element.modelo_ajustado
-          var serie = element.numero_serie_bien
-          if (serie == null || serie == '' || serie == 'null') {
-            serie = 'S/N'
-          }
-          if (modelo == null || modelo == '' || modelo == 'null') {
-            modelo = 'S/M'
-          }
-          // Cargar bienes
-          $('.list-bienes').append(
-            `<li class="nav-item" id="${element.codigo_patrimonial}">
+          $('.list-bienes').empty()
+
+          data[0].forEach((element) => {
+            var modelo = element.modelo_ajustado
+            var serie = element.numero_serie_bien
+            if (serie == null || serie == '' || serie == 'null') {
+              serie = 'S/N'
+            }
+            if (modelo == null || modelo == '' || modelo == 'null') {
+              modelo = 'S/M'
+            }
+            // Cargar bienes
+            $('.list-bienes').append(
+              `<li class="nav-item" id="${element.codigo_patrimonial}">
                <p>${element.nombre_bien_ajustado}<br />
                <span class="subtitle-bien"><strong>MARCA:</strong> <em> ${element.marca_d}</em> | <strong>MODELO:</strong> <em>${modelo}</em> | <strong>SERIE:</strong> <em>${serie}</em>
                | <strong>CÓDIGO:</strong> <em>${element.codigo_patrimonial}</em>
                </span></p>
              </li>`
-          )
-          totalBienes = totalBienes + 1
-        })
+            )
+            totalBienes = totalBienes + 1
+          })
 
-        // Total de bienes
-        $('#totalBienes').text(totalBienes)
-        // Item activo
-        const firstItem = $('.list-bienes li:first')
-        firstItem.addClass('active')
-
-        // Cargar detalles
-        const firstCode = firstItem.attr('id')
-        cargarBienesDetalle(firstCode)
-
-        // Active para li
-        $('.list-bienes li').on('click', function () {
-          $('.list-bienes li').removeClass('active')
-          $(this).addClass('active')
+          // Total de bienes
+          $('#totalBienes').text(totalBienes)
+          // Item activo
+          const firstItem = $('.list-bienes li:first')
+          firstItem.addClass('active')
 
           // Cargar detalles
-          const code = $(this).attr('id')
-          cargarBienesDetalle(code)
-        })
+          const firstCode = firstItem.attr('id')
+          cargarBienesDetalle(firstCode)
+
+          // Active para li
+          $('.list-bienes li').on('click', function () {
+            $('.list-bienes li').removeClass('active')
+            $(this).addClass('active')
+
+            // Cargar detalles
+            const code = $(this).attr('id')
+            cargarBienesDetalle(code)
+          })
+        }
       },
       error: function (err) {
         console.log(err)
+        console.log('No existen bienes registrados en la base de datos')
       }
     })
   })
@@ -173,5 +194,10 @@ $(document).ready(function () {
     $('.list-bienes li').filter(function () {
       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
     })
+  })
+
+  // Cerrar modal
+  $('#closeModal').on('click', function () {
+    $('#detailModal').removeClass('show').css('display', 'none')
   })
 })

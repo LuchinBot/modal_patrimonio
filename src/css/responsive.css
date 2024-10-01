@@ -1,14 +1,19 @@
 /*Responsive*/
 
-@media screen and (max-width: 768px) {
+/* Responsive para android y ios */
+
+@media only screen and (max-width: 768px) {
 
     .base-img1,
     .base-img2 {
         display: none;
     }
-
+    .row>* {
+    padding: 0px !important;
+}
     .form-container {
         left: 0px !important;
+        top: 20px !important;
     }
 
     .modal {
@@ -20,13 +25,24 @@
         justify-content: center;
         align-items: center;
     }
+    p{
+        font-size: small;
+    }
     .list-bienes{
-        height: 100px;
+        height: 180px;
+        border: 1px solid #212529;
     }
     .list-bienes .nav-item p{
         font-size: 13px !important;
     }
-    .detail-info{
+    .detail-bien{
+        border-bottom: 1px solid #212529;
         margin-top: 30px;
+    }
+    .detail .col-md-6:nth-child(1){
+        border: none !important;
+    }
+    .col-bienes-2{
+        flex-direction: column-reverse !important;
     }
 }

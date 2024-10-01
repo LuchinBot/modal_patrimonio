@@ -13,8 +13,11 @@ body {
     height: 100vh;
     overflow: hidden;
 
+    
 }
-
+body.swal2-height-auto {
+    height: 100% !important
+  }
 .modal-header {
     border-top-left-radius: 0 !important;
     border-top-right-radius: 0 !important;
@@ -271,10 +274,13 @@ button:focus{
 .detail-bien{
     border-left: 1px solid #212529;
     border-right: 1px solid #212529;
+    font-size: 16px !important;
+    background-color: #21252925;
 }
 .detail-info{
     background-color: #39b44984;
-    border: 1px solid #212529;
+    border-bottom: 1px solid #212529;
+    border-top: 1px solid #212529;
     position: relative;
 }
 .detail-info .info{
@@ -296,16 +302,15 @@ button:focus{
     font-weight: 300;
     color : #111;
 }
-.detail-bien {
-    font-size: 16px !important;
-    background-color: #21252925;
-}
 
 .detail label {
     text-transform: uppercase;
     font-weight: 600;
     margin-bottom: 0px;
     font-size: 14px;
+}
+.detail .col-md-6:nth-child(1){
+    border-right: 1px solid #212529;
 }
 
 .detail p {

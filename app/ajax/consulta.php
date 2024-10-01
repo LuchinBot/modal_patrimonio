@@ -21,7 +21,7 @@ if (isset($_POST['id'])) {
 
     // Obtener el nombre del persona natural
     $mysql = $db->prepare(
-        'SELECT nombres as empleado
+        'SELECT nombres as empleado, foto
          FROM persona_natural 
          WHERE numero_documento_identidad = ? '
     );

@@ -18,9 +18,11 @@
   <link href="src/plugins/fontawesome/css/all.min.css?v=<?= rand(); ?>" rel="stylesheet">
   <link href="src/plugins/fontawesome/css/solid.min.css?v=<?= rand(); ?>" rel="stylesheet">
   <link href="src/plugins/fontawesome/css/brands.min.css?v=<?= rand(); ?>" rel="stylesheet">
+
+
 </head>
 
-<body style="background-image: url('fondo.jpg')">
+<body style="background-image: url('fondo.jpg'); background-repeat: no-repeat; background-size: cover; height: 100vh !important">
   <div class="main-container">
     <!-- Contenedor del Formulario -->
     <div class="container-wrapp">
@@ -52,9 +54,7 @@
             <button
               id="searchBtn"
               type="button"
-              class="btn btn-primary"
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal">
+              class="btn btn-primary">
               <i class="fas fa-search"></i>
             </button>
           </div>
@@ -71,16 +71,14 @@
 
   <div
     class="modal fade"
-    id="exampleModal"
-    tabindex="-1"
-    aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
+    id="detailModal"
+    tabindex="-1">
     <div class="modal-dialog modal-dialog-centered modal-xl">
       <div class="modal-content">
         <div class="modal-header bg-dark">
           <div class="base-title px-2">
             <div class="base-profile me-2">
-              <img src="src/img/boy.png" alt="" />
+              <img src="src/img/boy.png" id="foto" alt="" />
             </div>
             <p class="m-0 p-0 text-white">
               Hola <strong id="empleado">Luis José</strong>, tienes un total de
@@ -89,20 +87,18 @@
           </div>
           <button
             type="button"
-            class="btn-close bg-white"
-            data-bs-dismiss="modal"
-            aria-label="Close"></button>
+            class="btn-close bg-white" id="closeModal"></button>
         </div>
         <div class="modal-body">
           <!--Search and List-->
           <div class="row p-2 section-bienes">
-            <div class="col-md-6 .col-bienes">
+            <div class="col-md-6 col-bienes">
               <input
                 type="text"
                 class="form-control search mb-2 px-0"
                 placeholder="Buscar por caracteristica del bien..."
                 id="search" />
-              <ul class="list-bienes py-3">
+              <ul class="list-bienes my-3">
                 <!--<li class="nav-item" id="">
                     <p>
                       Unidad de Alimentación Ininterrumpida [ 462200500066]
@@ -115,17 +111,18 @@
                   </li>-->
               </ul>
             </div>
-            <div class="col-md-6 p-0">
-              <div class="d-flex detail-info">
-                <span class="info"><i class="fas fa-info-circle"></i></span>
+            <div class="col-md-6 p-0 col-bienes-2">
 
-                <p class="m-0 px-3 py-2">
-                  Información proporcionada o migrada del <strong class="fw-bold">S.I.G.A</strong>. Las altas, bajas y/o modificación de bienes patrimoniales es un procedimiento exclusivo del <strong class="fw-bold">Área de Control Patrimonial</strong>.
-                </p>
-              </div>
-              <div class="detail-bien px-4">
-                <div class="row detail">
-                  <div class="col-md-6 py-2" style="border-right: 1px solid #212529;">
+              <div class="detail-bien">
+                <div class="d-flex detail-info">
+                  <span class="info"><i class="fas fa-info-circle"></i></span>
+
+                  <p class="m-0 px-3 py-2">
+                    Información proporcionada o migrada del <strong class="fw-bold">S.I.G.A</strong>. Las altas, bajas y/o modificación de bienes patrimoniales es un procedimiento exclusivo del <strong class="fw-bold">Área de Control Patrimonial</strong>.
+                  </p>
+                </div>
+                <div class="row detail px-4">
+                  <div class="col-md-6 py-2">
                     <div class="mb-1 border-bottom">
                       <label>Bien Patrimonial</label>
                       <p id="bienPatrimonial"></p>
@@ -222,7 +219,9 @@
     src="https://code.jquery.com/jquery-3.7.1.js"
     integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
     crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="src/js/modal.js"></script>
+
 </body>
 
 </html>
