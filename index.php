@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Icon -->
+  <link rel="icon" type="image/png" href="src/img/icon_drasuite.png" />
   <title>Consultas en Línea - Dirección Regional de Agricultura</title>
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="src/css/styles.css" />
   <link rel="stylesheet" href="src/css/scroll.css" />
   <link rel="stylesheet" href="src/css/responsive.css" />
-
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
     rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
     crossorigin="anonymous" />
-  <link href="src/plugins/fontawesome/css/fontawesome.min.css?v=<?= rand(); ?>" rel="stylesheet">
-  <link href="src/plugins/fontawesome/css/all.min.css?v=<?= rand(); ?>" rel="stylesheet">
-  <link href="src/plugins/fontawesome/css/solid.min.css?v=<?= rand(); ?>" rel="stylesheet">
-  <link href="src/plugins/fontawesome/css/brands.min.css?v=<?= rand(); ?>" rel="stylesheet">
-
-
+  <link rel="stylesheet" href="src/plugins/fontawesome/css/fontawesome.min.css?v=<?= rand(); ?>">
+  <link rel="stylesheet" href="src/plugins/fontawesome/css/all.min.css?v=<?= rand(); ?>">
+  <link rel="stylesheet" href="src/plugins/fontawesome/css/solid.min.css?v=<?= rand(); ?>">
+  <link rel="stylesheet" href="src/plugins/fontawesome/css/brands.min.css?v=<?= rand(); ?>">
 </head>
 
-<body style="background-image: url('fondo.jpg'); background-repeat: no-repeat; background-size: cover; height: 100vh !important">
+<body style="background-image: url('src/img/fondo.jpg'); height: 100vh !important;
+">
   <div class="main-container">
-    <!-- Contenedor del Formulario -->
+    <!-- Contenedor del formulario -->
     <div class="container-wrapp">
       <div class="base-img1">
-        <img src="man1.png" alt="" class="img1" />
+        <img src="src/img/body.png" alt="" class="img1" />
       </div>
       <div class="form-container">
         <div class="logo">
-          <img src="control_patrimonial.png" alt="Trámite Logo" />
+          <img src="src/img/control_patrimonial.png" alt="Trámite Logo" />
         </div>
         <div class="information">
           <span class="info"><i class="fas fa-info-circle"></i></span>
@@ -64,7 +64,7 @@
         </div>
       </div>
       <div class="base-img2">
-        <img src="mano.png" alt="" class="img1" />
+        <img src="src/img/thousand.png" alt="" class="img1" />
       </div>
     </div>
   </div>
@@ -87,9 +87,9 @@
           </div>
           <button
             type="button"
-            class="btn-close bg-white" id="closeModal"></button>
+            class="btn-close me-2 bg-white" id="closeModal"></button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body bg-white">
           <!--Search and List-->
           <div class="row p-2 section-bienes">
             <div class="col-md-6 col-bienes">
@@ -117,7 +117,7 @@
                 <div class="d-flex detail-info">
                   <span class="info"><i class="fas fa-info-circle"></i></span>
 
-                  <p class="m-0 px-3 py-2">
+                  <p class="m-0 px-3 py-2 bg-info">
                     Información proporcionada o migrada del <strong class="fw-bold">S.I.G.A</strong>. Las altas, bajas y/o modificación de bienes patrimoniales es un procedimiento exclusivo del <strong class="fw-bold">Área de Control Patrimonial</strong>.
                   </p>
                 </div>
@@ -147,10 +147,6 @@
                       <label>Clase Bien</label>
                       <p id="claseBien"></p>
                     </div>
-                    <div class="mb-1">
-                      <label>Observaciones</label>
-                      <p id="observaciones"></p>
-                    </div>
 
                   </div>
                   <div class="col-md-6 py-2">
@@ -171,10 +167,10 @@
                         <label>Modelo</label>
                         <p id="modelo"></p>
                       </div>
-                    </div>
-                    <div class="mb-1 border-bottom">
-                      <label>Serie</label>
-                      <p id="serie"></p>
+                      <div class="mb-1 border-bottom">
+                        <label>Serie</label>
+                        <p id="serie"></p>
+                      </div>
                     </div>
                     <div class="mb-1 border-bottom">
                       <label>Medidas</label>
@@ -183,6 +179,10 @@
                     <div class="mb-1">
                       <label>caracteristicas</label>
                       <p id="caracteristicas">-------</p>
+                    </div>
+                    <div class="mb-1">
+                      <label>Observaciones</label>
+                      <p id="observaciones"></p>
                     </div>
                   </div>
                 </div>
@@ -219,9 +219,8 @@
     src="https://code.jquery.com/jquery-3.7.1.js"
     integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
     crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="src/js/modal.js"></script>
-
 </body>
 
 </html>

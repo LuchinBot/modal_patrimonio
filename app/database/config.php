@@ -9,7 +9,7 @@ try {
   $db = new PDO("mysql:host=" . $host . ";dbname=" . $dbname, $username, $password);
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   $db->exec('SET CHARACTER SET UTF8');
- //echo "Connected successfully";
+  //echo "Connected successfully";
 } catch (PDOException $e) {
   echo "Connection failed: " . $e->getMessage();
 }

@@ -1,21 +1,31 @@
-/*Responsive*/
-
-/* Responsive para android y ios */
-
 @media only screen and (max-width: 768px) {
-
-    .base-img1,
-    .base-img2 {
-        display: none;
+    body{
+        height: 100vh !important;
+        background-size: cover;
     }
     .row>* {
-    padding: 0px !important;
-}
+        padding: 0px !important;
+    }
+
+    p {
+        font-size: small;
+    }
+
+    /*Form styles*/
     .form-container {
         left: 0px !important;
         top: 20px !important;
     }
 
+    .base-img1,
+    .base-img2 {
+        display: none;
+    }
+
+    /*Modal styles*/
+    .modal-content{
+        padding: 0px !important;
+    }
     .modal {
         width: 100% !important;
     }
@@ -25,24 +35,26 @@
         justify-content: center;
         align-items: center;
     }
-    p{
-        font-size: small;
-    }
-    .list-bienes{
+
+    .list-bienes {
         height: 180px;
         border: 1px solid #212529;
     }
-    .list-bienes .nav-item p{
+
+    .list-bienes .nav-item p {
         font-size: 13px !important;
     }
-    .detail-bien{
+
+    .detail-bien {
         border-bottom: 1px solid #212529;
         margin-top: 30px;
     }
-    .detail .col-md-6:nth-child(1){
+
+    .detail .col-md-6:nth-child(1) {
         border: none !important;
     }
-    .col-bienes-2{
+
+    .col-bienes-2 {
         flex-direction: column-reverse !important;
     }
 }
